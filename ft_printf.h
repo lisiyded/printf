@@ -20,10 +20,11 @@
 
 typedef struct		s_list
 {
-	int				index;
-	int				width;
-	int				withprecision;
-	int				precision;
+	int				index; // может принимать -1 0 (опередялет тип выравнивания
+							// левый правый край заполнение нулями или пробелами
+	int				width; // общая ширина поля
+	int				withprecision; // наличие отсуствие точности (выводит число с точкой или нет)
+	int				precision; // кол-во символов после запятой
 }					t_list;
 
 int					ft_length_h(unsigned long	int	nb);

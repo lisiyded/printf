@@ -12,6 +12,8 @@
 
 #include "ft_printf.h"
 
+// задать точность 
+// вернуть точность
 int	ft_count_d_i(t_list *list, int nb)
 {
 	int width;

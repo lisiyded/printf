@@ -14,12 +14,12 @@
 
 int	ft_flags_printf(char c, t_list *list)
 {
-	if (c == '-')
+	if (c == '-') // если поступил минус 
 	{
 		list->index = '-';
 		return (1);
 	}
-	if (c == '0' && list->index != '-')
+	if (c == '0' && list->index != '-') //если поступил нуль
 	{
 		if (list->index != '-')
 			list->index = '0';
@@ -27,3 +27,7 @@ int	ft_flags_printf(char c, t_list *list)
 	}
 	return (0);
 }
+
+// - выводимое значение выравнивается по левому краю в пределах минимальной ширины поля / нет по правому
+// * ширина  
+//  

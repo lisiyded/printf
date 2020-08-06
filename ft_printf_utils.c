@@ -12,6 +12,7 @@
 
 #include "ft_printf.h"
 
+// перевод в 16ричную систему
 void	ft_putnbr(int n)
 {
 	unsigned int div;

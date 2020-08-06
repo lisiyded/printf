@@ -12,6 +12,8 @@
 
 #include "ft_printf.h"
 
+// конвертация и печать для типов символ строка 
+//  d i знаковое десятичное
 int	ft_convert(va_list ap, char c, t_list *list)
 {
 	char	letter;
@@ -62,6 +64,7 @@ int	ft_convert_type(va_list ap, char c, t_list *list)
 	return (0);
 }
 
+// u десятичное беззнаковое
 int	ft_convertion(va_list ap, char c, t_list *list)
 {
 	unsigned int	unb;

@@ -19,13 +19,13 @@ int		ft_check_number(const char **format, va_list ap)
 
 	number = 0;
 	form = *format;
-	if (*form == '*')
+	if (*form == '*') // для предачи точности ширины 
 	{
 		number = (int)va_arg(ap, int);
 		form++;
 	}
 	else
-		while ('0' <= *form && *form <= '9')
+		while ('0' <= *form && *form <= '9') // перевод точности ширины заданной числом чар
 		{
 			number = number * 10 + *form - '0';
 			form++;
@@ -58,13 +58,16 @@ int		ft_check_format(t_list *list, const char **format, va_list ap)
 	c = ft_convert(ap, *form, list);
 	return (c);
 }
-
+// эта функция печатает по одному символу 
 int		ft_print_char(const char *format, int tt_bytes)
 {
 	write(1, format, 1);
 	return (tt_bytes + 1);
 }
-
+// эта функция идет по строке и печатает символы до % 
+// else инициализация листа значеними для ширины, точности, индекса и тд
+// проверка формата что встретит функция для обработки (check format)
+// check number обработка символа * и перевод для печати в чар
 int		ft_printf(const char *format, ...)
 {
 	va_list	ap;
@@ -81,7 +84,7 @@ int		ft_printf(const char *format, ...)
 		{
 			if (!(list = ft_list()))
 				return (-1);
-			format++;
+			format++; // пропускаю % 
 			tt_bytes = tt_bytes + ft_check_format(list, &format, ap);
 			free(list);
 		}
